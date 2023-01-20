@@ -21,7 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
