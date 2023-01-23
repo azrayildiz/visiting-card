@@ -1,8 +1,8 @@
 export interface Card {
-  name: string;
+  name?: string;
   title: string;
-  email: string;
-  phone: string;
-  address:  string;
+  phone?: string;
+  email?: string;
+  address?:  string;
 
 }
