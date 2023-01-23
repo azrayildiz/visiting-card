@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CardModalComponent } from './card-modal/card-modal.component';
 
 @Component({
   selector: 'app-cards',
@@ -13,13 +15,16 @@ export class CardsComponent implements OnInit {
     phone: '087 394 023 7490',
     address: 'Berlin - Germany'
   }
-  constructor(){}
-    ngOnInit(): void {
-      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-      //Add 'implements OnInit' to the class.
+  constructor(public dialog: MatDialog){}
 
-
+  openAddCardModal(){
+    this.dialog.open(CardModalComponent, {
+      width: '400px'
+    });
   }
-
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+}
 
 }

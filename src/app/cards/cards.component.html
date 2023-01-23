@@ -1,6 +1,14 @@
 <main>
-    <h1 class="page-title">Visiting Cards</h1>
-    <p class="page-description"> You can select your visiting cards.</p>
+   <div class="d-flex align-items-center">
+    <div class="flex-grow-1">
+      <h1 class="page-title">Visiting Cards</h1>
+      <p class="page-description">
+        On this page you can manage your visiting cards.
+      </p>
+    </div>
+  <button mat-flat-button color="primary" (click)="openAddCardModal()">New Visiting Card</button>
+
+   </div>
     <hr>
     <div class="cards">
         <div class="row">
