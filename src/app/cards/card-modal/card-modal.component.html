@@ -1,5 +1,11 @@
-<h2 mat-dialog-title>New Visiting Card</h2>
+<h2 mat-dialog-title>{{ data ? 'Edit Visiting Card' : 'New Visiting Card' }}</h2>
 <mat-dialog-content class="mat-typography">
+  <div *ngIf="showSpinner">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <br>
+  </div>
+
+
   <form [formGroup]="cardForm">
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
@@ -28,6 +34,12 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button (click)="addCard()">Add</button>
+  <div class="flex-gr text-start" *ngIf="data">
+    <button mat-stroked-button color="warn" (click)="deleteCard()" [disabled]="showSpinner">Delete</button>
+  </div>
+  <div>
+     <button mat-button mat-dialog-close>Cancel</button>
+     <button mat-flat-button color="primary" (click)="data ? updateCard() : addCard()" [disabled]="cardForm.invalid || showSpinner">{{data ? 'Edit' : 'Add'}}</button>
+  </div>
+
 </mat-dialog-actions>
